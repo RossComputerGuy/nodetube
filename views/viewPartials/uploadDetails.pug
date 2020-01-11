@@ -8,9 +8,13 @@ div(style="")
             div.card-text
                 p.upload-title-text.views-text(style="margin:0 auto;text-align:left; height: auto;")
                     a.upload-user-text.views-text(href=`/user/${upload.uploader.channelUrl}` style="margin:0;text-align:center;display:inline;") #{upload.uploader.channelName || upload.uploader.channelUrl}
-                if !within    
+
+                // no within it means it's recent
+                if !within
                     p.upload-title-text.views-text(style="margin:0 auto;text-align:left;display:inline;") uploaded #{upload.timeAgo} 
                     p.upload-title-text.views-text(style="margin:0 auto;text-align:left;display:inline;")  | #{upload.legitViewAmount} views
+
+                // if within it's popular page
                 if within
                     p.upload-title-text.views-text(style="text-align:left;") #{upload[popularTimeViews]} #{withinDisplayString}
 
