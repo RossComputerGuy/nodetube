@@ -1,3 +1,8 @@
+style.
+    .upload-div {
+        margin-bottom:25px;
+    }
+
 for category in categories
     //p= uploads[category.name]
     // if there's more than one per category
@@ -10,7 +15,7 @@ for category in categories
             // begin individual upload section
             each upload in uploads[category.name]
                 if upload.uploader
-                    div.col-sm-4(style="text-align:center;height:310px;")
+                    div.col-sm-4.upload-div(style="text-align:center;height:310px;")
                         div(style="width:100%")
                             include ../viewPartials/uploadDetails
 
