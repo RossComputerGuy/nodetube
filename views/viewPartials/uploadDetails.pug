@@ -3,20 +3,13 @@ style.
         text-align: center;
     }
 
-    .upload-title {
-        max-width: 261px;
-        margin: 0 auto;
-        margin-top: 5px;
-        text-align:center
-    }
-
 div(style="")
         div.card-img-top
             include ../viewPartials/uploadThumbnail         
         div.card-body(style="padding-top:6px")
             div.card-title
                 a(href=`/user/${upload.uploader.channelUrl || channelUrl}/${upload.uniqueTag}` style="color:black") 
-                    h4.upload-title #{upload.title}
+                    h4.text-left(style="text-align: center;max-width: 200px;margin: 0 auto;margin-top:6px;") #{upload.title}
             div.card-text
                 p.upload-title-text.views-text(style="margin:0 auto; height: auto;")
                     a.upload-user-text.views-text(href=`/user/${upload.uploader.channelUrl}` style="margin:0;text-align:center;display:inline;") #{upload.uploader.channelName || upload.uploader.channelUrl}
@@ -43,6 +36,7 @@ div(style="")
                         p.upload-title-text.views-text(style="display:inline") | NSFW
                     if upload.rating == 'sensitive'
                         p.upload-title-text.views-text(style="display:inline") | Sensitive (18+)
+
 
 style.
     input[type=checkbox] {
